@@ -109,7 +109,7 @@ else()
     set(CONFIGURE_OPENSSL_MODULES no-cast no-md2 no-md4 no-mdc2 no-rc4 no-rc5 no-engine no-idea no-mdc2 no-rc5 no-camellia no-ssl3 no-heartbeats no-gost no-deprecated no-capieng no-comp no-dtls no-psk no-srp no-dso)
 
     # additional configure script parameters
-    set(CONFIGURE_OPENSSL_PARAMS --api=1.1.0 --libdir=lib)
+    #set(CONFIGURE_OPENSSL_PARAMS "linux-generic32" )
 
     # set install command depending of choice on man page generation
     if (OPENSSL_INSTALL_MAN)
@@ -123,7 +123,7 @@ else()
 
     # cross-compiling
     if (CROSS)
-        set(COMMAND_CONFIGURE ./Configure ${CONFIGURE_OPENSSL_PARAMS} --cross-compile-prefix=${CROSS_PREFIX} ${CROSS_TARGET} ${CONFIGURE_OPENSSL_MODULES})
+        set(COMMAND_CONFIGURE ./Configure linux-generic32 --cross-compile-prefix=${CROSS_PREFIX})
         set(COMMAND_TEST "true")
     elseif(CROSS_ANDROID)
         
