@@ -30,6 +30,11 @@ set(CROSS_ANDROID OFF CACHE BOOL "Cross-compiling for Android?")
 set(CROSS OFF CACHE BOOL "Cross-compiling?")
 set(CROSS_TARGET OFF CACHE STRING "Cross-compilation target")
 set(SYSTEM_OPENSSL OFF CACHE STRING "Use system-provided openssl libraries (instead of prebuilts or building)")
+set(BUILD_OPENSSL ON)
+set(CROSS ON)
+set(CROSS_PREFIX "${PROJ_ROOT_FOLDER}/external/tools/arm-bcm2708/arm-rpi-4.9.3-linux-gnueabihf/bin/arm-linux-gnueabihf-")
+set(OPENSSL_BUILD_VERSION "1.1.0j")
+
 
 # allow including our modules
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
